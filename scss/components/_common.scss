@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font-family: $main-font;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+// section,
+// section.portfolio,
+// section.about,
+// section.benefits {
+//   padding-top: 84px;
+
+//   @media screen and (min-width: 768px) {
+//     padding-top: 100px;
+//   }
+//   @media screen and (min-width: 1200px) {
+//     padding-top: 120px;
+//   }
+// }
+.container {
+  margin: 0 auto;
+  overflow: hidden;
+  // padding-top: 84px;
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 768px;
+    // padding-top: 100px;
+  }
+  @media screen and (min-width: 1170px) {
+    width: 1170px;
+    // padding-top: 120px;
+  }
+}
+.list {
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  @include transition(color);
+  color: inherit;
+  &:hover,
+  &:focus {
+    color: getColor('accent');
+  }
+}
+.pre-title {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  &::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    margin-right: 20px;
+    background-color: getColor('pre-title');
+  }
+}
+
+.title {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+
+  font-size: 42px;
+  line-height: 1.17;
+
+  margin-bottom: 44px;
+}
+
+section .title {
+  margin-bottom: 20px;
+}
+.description {
+  font-size: 16px;
+  line-height: calc(26px / 16px);
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+    line-height: 1.67;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

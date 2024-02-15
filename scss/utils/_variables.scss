@@ -1,0 +1,19 @@
+$main-font: 'Open Sans', sans-serif;
+$secondary-font: 'Raleway', sans-serif;
+$timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$gap: 30px;
+$colors: (
+  'primary-text': #303030,
+  'secondary-text': #555555,
+  'tetriary-text': #9da4bd,
+  'bg-color': #f7f7f7,
+  'accent': #ff6c00,
+  'primary-white': #fff,
+  'pre-title': rgba(157, 164, 189, 0.6),
+);
+
+@function getColor($key) {
+  @return map-get($colors, $key);
+}
+
+//color: getColor('primary');

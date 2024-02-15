@@ -1,0 +1,221 @@
+.header {
+  & .container {
+    height: 580px;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+      height: 680px;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    & .rigth-side-wrapper {
+      @media screen and (min-width: 768px) {
+        width: 570px;
+      }
+      @media screen and (min-width: 1170px) {
+        width: 1070px;
+      }
+    }
+    & .header-wrapper {
+      padding-top: 40px;
+
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media screen and (max-width: 767px) {
+        padding: 40px 31px 0;
+      }
+      @media screen and (min-width: 768px) {
+        padding-left: 20px;
+      }
+      @media screen and (min-width: 1170px) {
+        padding-left: 100px;
+      }
+    }
+    & .side-bar-wrapper {
+      flex-grow: 1;
+      @media screen and (min-width: 768px) and (max-width: 1169px) {
+        padding-left: 90px;
+      }
+    }
+  }
+}
+
+.logo {
+  fill: getColor('primary-white');
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    left: 90px;
+    top: 30px;
+
+    fill: getColor('primary-text');
+  }
+  @media screen and (min-width: 1170px) {
+    left: 0;
+  }
+}
+
+.menu-backdrop {
+  opacity: 0;
+  @include transition(opacity);
+  &.is-open {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(25, 28, 38, 0.2);
+  }
+}
+.navigation-wrapper {
+  z-index: 10;
+
+  @media screen and(max-width:767px) {
+    display: flex;
+
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 200;
+    width: 65%;
+    height: 100vh;
+    background-color: getColor('primary-white');
+    padding-top: 118px;
+    padding-left: 40px;
+    transform: translateX(100%);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08),
+      0px 1px 3px rgba(0, 0, 0, 0.16);
+    overflow-y: scroll;
+    @include transition(transform);
+    &.is-open {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-left: auto;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 20px;
+  }
+}
+.header-nav {
+  @media screen and(max-width:767px) {
+    margin-bottom: 64px;
+  }
+}
+.contacts-wrapper {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+    align-items: end;
+  }
+  @media screen and (min-width: 1170px) {
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+}
+.header-nav-list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    // margin-right: 37px;
+  }
+  @media screen and (min-width: 1170px) {
+    gap: 30px;
+  }
+}
+.header-nav-item + .header-nav-item {
+  @media screen and(max-width:767px) {
+    margin-top: 24px;
+  }
+  @media screen and(min-width:768px) {
+    margin-left: 16px;
+  }
+
+  // margin-left: $gap;
+}
+.header-contact {
+  @media screen and(max-width:767px) {
+    display: block;
+    margin-bottom: 24px;
+  }
+  // margin-left: auto;
+  // margin-right: 40px;
+}
+.header-button {
+  @media screen and(max-width:767px) {
+    width: 194px;
+    color: getColor('primary-text');
+    margin-bottom: 64px;
+  }
+  @media screen and(min-width:768px) {
+    width: 160px;
+  }
+}
+
+.header-logo {
+  z-index: 10;
+}
+.header-link,
+.header-contact {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: calc(25px / 18px);
+
+  letter-spacing: 0.1em;
+
+  color: getColor('primary-text');
+  @media screen and (min-width: 768px) {
+    color: getColor('primary-white');
+    font-size: 12px;
+    line-height: calc(16px / 12px);
+  }
+}
+.header-nav-item + .header-nav-item {
+  @media screen and (min-width: 768px) {
+    margin-left: 16px;
+  }
+}
+
+.social-links-wrapper {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  padding-left: 100px;
+  /* identical to box height */
+
+  letter-spacing: 0.2em;
+  position: relative;
+
+  color: #303030;
+  display: flex;
+  align-items: baseline;
+  gap: 40px;
+  & .social-item:first-child {
+    margin-bottom: 24px;
+  }
+  & .social-item:first-child::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    margin-right: 40px;
+    background-color: #303030;
+    position: absolute;
+    left: 0;
+    top: 9px;
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}

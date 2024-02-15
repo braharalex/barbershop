@@ -1,0 +1,18 @@
+// utils
+@import './utils/variables';
+@import './utils/visually-hidden';
+@import './utils/mixins';
+
+// base styles
+@import './components/common';
+@import './components/buttons';
+
+@import './layouts/page-header';
+@import './layouts/hero';
+@import './layouts/about';
+@import './layouts/prices';
+@import './layouts/benefits';
+@import './layouts/barbers';
+@import './layouts/portfolio';
+@import './layouts/booking-form';
+@import './layouts/footer';
